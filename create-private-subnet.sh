@@ -4,7 +4,7 @@
 #fi
 
 # login validation
-ibmcloud login --apikey $IBM_CLOUD_API_KEY -r 'us-south' 
+ibmcloud login --apikey $IBM_CLOUD_API_KEY -r 'us-south' -g 'Unique'
 
 # Power Workspace target
 service_list_output=$(ibmcloud pi service-list)
