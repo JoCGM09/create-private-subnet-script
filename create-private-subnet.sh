@@ -6,6 +6,8 @@
 # login validation
 ibmcloud login --apikey $IBM_CLOUD_API_KEY -q
 
+10
+
 # Power Workspace target
 service_list_output=$(ibmcloud pi service-list)
 service_crn=$(echo "$service_list_output" | awk -v workspace="$IBM_POWER_WORKSPACE_NAME" '$0 ~ workspace {print $1}')
