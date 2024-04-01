@@ -4,12 +4,12 @@
 #fi
 
 # login validation
-ibmcloud login --apikey $IBM_CLOUD_API_KEY -q
+ibmcloud login --apikey $IBM_CLOUD_API_KEY -r 'us-south' 
 
 # Power Workspace target
 service_list_output=$(ibmcloud pi service-list)
 service_crn=$(echo "$service_list_output" | awk -v workspace="$IBM_POWER_WORKSPACE_NAME" '$0 ~ workspace {print $1}')
-echo "10" | ibmcloud pi service-target "$service_crn"
+ibmcloud pi service-target "$service_crn"
 
 #########################  Script 1: Create private subnet  ##########################    
 
